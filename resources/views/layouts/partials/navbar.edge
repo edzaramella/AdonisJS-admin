@@ -1,0 +1,134 @@
+<nav class="navbar navbar-header navbar-expand navbar-light">
+    @loggedIn
+    <a href="#"
+       class="sidebar-toggler"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </a>
+    @endloggedIn
+    <button type="button"
+            class="btn navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarSupportedContent"
+         class="collapse navbar-collapse"
+    >
+        @loggedIn
+        <ul class="navbar-nav d-flex align-items-center navbar-light ms-auto">
+            <li class="dropdown nav-icon">
+                <a href="#"
+                   class="nav-link  dropdown-toggle nav-link-lg nav-link-user"
+                   data-bs-toggle="dropdown"
+                >
+                    <div class="d-lg-inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="16"
+                             height="16"
+                             fill="currentColor"
+                             class="bi bi-bell-fill"
+                             viewBox="0 0 16 16"
+                        >
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                        </svg>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-large">
+                    <h6 class="py-2 px-4">Notifications</h6>
+                    <ul class="list-group rounded-none">
+                        <li class="list-group-item border-0 align-items-start">
+                            <div class="avatar bg-success me-3">
+                                <span class="avatar-content"><i data-feather="shopping-cart"></i></span>
+                            </div>
+                            <div>
+                                <h6 class="text-bold">New Order</h6>
+                                <p class="text-xs">
+                                    An order made by Ahmad Saugi for product Samsung Galaxy S69
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown nav-icon me-2">
+                <a href="#"
+                   class="nav-link dropdown-toggle nav-link-lg nav-link-user"
+                   data-bs-toggle="dropdown"
+                >
+                    <div class="d-lg-inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="16"
+                             height="16"
+                             fill="currentColor"
+                             class="bi bi-envelope-fill"
+                             viewBox="0 0 16 16"
+                        >
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                        </svg>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a href="#"
+                       class="dropdown-item"
+                    ><i data-feather="user"></i> Account</a>
+                    <a href="#"
+                       class="dropdown-item active"
+                    ><i data-feather="mail"></i> Messages</a>
+                    <a href="#"
+                       class="dropdown-item"
+                    ><i data-feather="settings"></i> Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#"
+                       class="dropdown-item"
+                    ><i data-feather="log-out"></i> Logout</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#"
+                   class="nav-link dropdown-toggle nav-link-lg nav-link-user"
+                   data-bs-toggle="dropdown"
+                >
+                    <div class="avatar me-1">
+                        <img src="assets/images/avatar/avatar-s-1.png"
+                             alt=""
+                             srcset=""
+                        >
+                    </div>
+                    <div class="d-none d-md-block d-lg-inline-block">Hi, Saugi</div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a href="#"
+                       class="dropdown-item"
+                    ><i data-feather="user"></i> Account</a>
+                    <a href="#"
+                       class="dropdown-item active"
+                    ><i data-feather="mail"></i> Messages</a>
+                    <a href="#"
+                       class="dropdown-item"
+                    ><i data-feather="settings"></i> Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('logout') }}"
+                       class="dropdown-item"
+                    ><i data-feather="log-out"></i> Logout</a>
+                </div>
+            </li>
+        </ul>
+        @else
+        <div class="ms-auto">
+            <a href="{{ route('register') }}"
+               class="btn btn-outline-primary ml-3"
+            >Inscrever-se
+            </a>
+            <a href="{{ route('login') }}"
+               class="btn btn-primary ml-50"
+            >Entrar
+            </a>
+        </div>
+        @endloggedIn
+    </div>
+</nav>
